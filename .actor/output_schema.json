@@ -1,14 +1,12 @@
 {
   "actorOutputSchemaVersion": 1,
   "title": "Fiverr Search & Gigs Output",
-  "description": "Fiverr gig listings containing pricing, seller metadata, ratings, and media links.",
-  "type": "object",
   "properties": {
     "results": {
       "type": "string",
       "title": "Scraped Fiverr Gigs",
-      "description": "The dataset containing extracted Fiverr gigs.",
-      "editor": "dataset"
+      "description": "All items from the default dataset.",
+      "template": "{{actorRun.defaultDatasetUrl}}?format=json"
     }
   }
 }
