@@ -1,0 +1,165 @@
+{
+  "actorSpecification": 1,
+  "fields": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": [
+          "string",
+          "number"
+        ],
+        "description": "Unique identifier of the gig"
+      },
+      "title": {
+        "type": "string",
+        "description": "Title of the gig"
+      },
+      "url": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "description": "Full URL to the gig page"
+      },
+      "searchQuery": {
+        "type": "string",
+        "description": "Search term used to find this gig"
+      },
+      "page": {
+        "type": "integer",
+        "description": "Search results page number"
+      },
+      "price": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "currency": {
+            "type": "string"
+          },
+          "currencySymbol": {
+            "type": "string"
+          }
+        }
+      },
+      "seller": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": [
+              "string",
+              "number",
+              "null"
+            ]
+          },
+          "username": {
+            "type": "string"
+          },
+          "displayName": {
+            "type": "string"
+          },
+          "country": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "level": {
+            "type": "string"
+          },
+          "isOnline": {
+            "type": "boolean"
+          }
+        }
+      },
+      "rating": {
+        "type": "object",
+        "properties": {
+          "score": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "count": {
+            "type": "integer"
+          }
+        }
+      },
+      "badges": {
+        "type": "object",
+        "properties": {
+          "isPro": {
+            "type": "boolean"
+          },
+          "isChoice": {
+            "type": "boolean"
+          }
+        }
+      },
+      "images": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        }
+      },
+      "scrapedAt": {
+        "type": "string",
+        "format": "date-time"
+      }
+    },
+    "required": [
+      "id",
+      "title",
+      "searchQuery"
+    ]
+  },
+  "views": {
+    "overview": {
+      "title": "Overview",
+      "transformation": {
+        "fields": [
+          "title",
+          "price.amount",
+          "price.currency",
+          "seller.username",
+          "rating.score",
+          "rating.count",
+          "url"
+        ]
+      },
+      "display": {
+        "component": "table",
+        "properties": {
+          "title": {
+            "label": "Gig Title"
+          },
+          "price.amount": {
+            "label": "Price"
+          },
+          "price.currency": {
+            "label": "Currency"
+          },
+          "seller.username": {
+            "label": "Seller"
+          },
+          "rating.score": {
+            "label": "Rating"
+          },
+          "rating.count": {
+            "label": "Reviews"
+          },
+          "url": {
+            "label": "Gig Link",
+            "format": "link"
+          }
+        }
+      }
+    }
+  }
+}
