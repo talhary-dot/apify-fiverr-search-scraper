@@ -1,6 +1,7 @@
 {
   "actorOutputSchemaVersion": 1,
   "title": "Fiverr Search & Gigs Output",
+  "type": "object",
   "properties": {
     "results": {
       "type": "string",

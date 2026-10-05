@@ -100,6 +100,8 @@ try {
   log.info(`Fiverr Scraper completed successfully. Total gigs collected: ${totalGigsSaved}`);
 } catch (error: any) {
   log.exception(error, 'Actor failed with an error');
+  process.exit(1);
 } finally {
   await Actor.exit();
+  process.exit(0);
 }
