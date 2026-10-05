@@ -3,10 +3,10 @@
     "name": "apify-fiverr-search-scraper",
     "title": "Fiverr Search & Gigs Scraper",
     "description": "Scrapes Fiverr search results, extracting gig details, pricing, ratings, seller info, and media.",
-    "version": "1.0.0",
+    "version": "0.0",
     "meta": {
         "templateId": "project_empty"
     },
-    "dockerfile": "./Dockerfile",
-    "input": "./.actor/input_schema.json"
+    "dockerfile": "../Dockerfile",
+    "input": "./input_schema.json"
 }
