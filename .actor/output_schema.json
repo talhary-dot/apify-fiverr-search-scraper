@@ -7,7 +7,7 @@
       "type": "string",
       "title": "Scraped Fiverr Gigs",
       "description": "All items from the default dataset.",
-      "template": "{{storages.datasets.default.apiUrl}}/items?format=json"
+      "template": "{{storages.datasets.default.apiUrl}}/items"
     }
   }
 }
