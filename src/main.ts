@@ -69,7 +69,16 @@ try {
         totalGigsSaved += gigsToPush.length;
 
         log.info(
-          `Saved ${gigsToPush.length} gigs from page ${page}. Total matching on Fiverr: ${searchResult.totalResults}`
+          `\n--- Gigs Scraped (Page ${page} of "${query}") ---`
+        );
+        for (let i = 0; i < gigsToPush.length; i++) {
+          const gig = gigsToPush[i];
+          log.info(
+            `${i + 1}. [${gig.price.currencySymbol}${gig.price.amount}] ${gig.title} | @${gig.seller.username} (${gig.rating.score ?? 'N/A'}★ ${gig.rating.count} reviews) | ${gig.url}`
+          );
+        }
+        log.info(
+          `Total matching on Fiverr: ${searchResult.totalResults}\n`
         );
 
         if (!searchResult.hasMore || page >= searchResult.totalPages) {
@@ -86,11 +95,6 @@ try {
         break;
       }
     }
-  }
-
-  // Save full results to default OUTPUT key-value store record
-  if (allGigs.length > 0) {
-    await Actor.setValue('OUTPUT', allGigs);
   }
 
   log.info(`Fiverr Scraper completed successfully. Total gigs collected: ${totalGigsSaved}`);
