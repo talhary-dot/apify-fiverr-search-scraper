@@ -7,7 +7,7 @@ COPY tsconfig.json ./
 
 # Install dependencies including devDependencies
 RUN npm --quiet set progress=false \
-    && npm install
+    && npm install --include=dev
 
 # Copy source code
 COPY src ./src
