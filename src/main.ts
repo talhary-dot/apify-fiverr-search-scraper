@@ -36,6 +36,8 @@ try {
 
   let totalGigsSaved = 0;
 
+  const allGigs: FiverrGig[] = [];
+
   for (const query of queries) {
     log.info(`Processing query: "${query}" (max ${maxPagesPerQuery} pages)`);
 
@@ -63,10 +65,11 @@ try {
         }));
 
         await Actor.pushData(gigsToPush);
+        allGigs.push(...gigsToPush);
         totalGigsSaved += gigsToPush.length;
 
         log.info(
-          `Saved ${gigsToPush.length} gigs from page ${page}. Total total matching on Fiverr: ${searchResult.totalResults}`
+          `Saved ${gigsToPush.length} gigs from page ${page}. Total matching on Fiverr: ${searchResult.totalResults}`
         );
 
         if (!searchResult.hasMore || page >= searchResult.totalPages) {
@@ -83,6 +86,11 @@ try {
         break;
       }
     }
+  }
+
+  // Save full results to default OUTPUT key-value store record
+  if (allGigs.length > 0) {
+    await Actor.setValue('OUTPUT', allGigs);
   }
 
   log.info(`Fiverr Scraper completed successfully. Total gigs collected: ${totalGigsSaved}`);
