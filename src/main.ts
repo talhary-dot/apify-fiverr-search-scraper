@@ -97,6 +97,10 @@ try {
     }
   }
 
+  if (allGigs.length > 0) {
+    await Actor.setValue('OUTPUT', allGigs);
+  }
+
   log.info(`Fiverr Scraper completed successfully. Total gigs collected: ${totalGigsSaved}`);
 } catch (error: any) {
   log.exception(error, 'Actor failed with an error');
