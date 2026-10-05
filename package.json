@@ -1,0 +1,31 @@
+{
+  "name": "apify-fiverr-search-scraper",
+  "version": "1.0.0",
+  "description": "Apify Actor to scrape Fiverr search results and gig listings",
+  "main": "dist/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "npm run start:prod",
+    "start:prod": "node dist/main.js",
+    "start:dev": "tsx src/main.ts",
+    "build": "tsc"
+  },
+  "keywords": [
+    "apify",
+    "actor",
+    "fiverr",
+    "scraper",
+    "gigs",
+    "freelance"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "apify": "^3.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.4",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2"
+  }
+}

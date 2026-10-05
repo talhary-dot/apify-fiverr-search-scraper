@@ -1,0 +1,59 @@
+{
+    "title": "Fiverr Search Scraper Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "queries": {
+            "title": "Search Queries",
+            "type": "array",
+            "description": "List of keywords or search queries to search on Fiverr (e.g. ['logo design', 'wordpress']).",
+            "editor": "json",
+            "prefill": [
+                "logo design"
+            ]
+        },
+        "maxPagesPerQuery": {
+            "title": "Max Pages Per Query",
+            "type": "integer",
+            "description": "Maximum number of search result pages to scrape per query (48 gigs per page).",
+            "default": 1,
+            "minimum": 1
+        },
+        "sortBy": {
+            "title": "Sort By",
+            "type": "string",
+            "description": "Sorting criteria for search results.",
+            "editor": "select",
+            "default": "relevance",
+            "enum": [
+                "relevance",
+                "rating",
+                "best_selling",
+                "newest"
+            ],
+            "enumTitles": [
+                "Relevance",
+                "Top Rated",
+                "Best Selling",
+                "Newest Arrivals"
+            ]
+        },
+        "cookie": {
+            "title": "Fiverr Session Cookie",
+            "type": "string",
+            "description": "Session cookie from browser DevTools to bypass anti-bot verification.",
+            "editor": "textarea",
+            "default": "u_guid=1791203631000-b70596254a59ebdeefe9ba6601e9d78aef12667a; go_back_to_fiverr_url=%2F; logged_out_currency=USD; _pxhd=KKn3NpDsVWnAItYiYDX/6kVyTdbG4dG5WHj5G6l1bHOnk2Gex5LaLIHWoDMG8DxcyKm5SYcXMjm3mqgGOfnrKA==:qfLcxORuqwsTg6HSd0dZfUV4XhKIYUV0r9nFs2USMrXMSOg8MVPwyUVGyVhN8uPO8pFCDRgZbYJDAPSuggrTSJ/3ryfLDpxnx05kaZV-m28=; _cfuvid=6KmShH2cgZvjSVFpn35rtPz6m8fw1u.8nT503fzrfY4-1791203630.3267071-1.0.1.1-AMuPgKKJF9ghEC_.V_nNhBH6dCzhqDcgtsLvdeglnJg; page_views=1; cpra_opt_out_status_external=false; _ga=GA1.1.1274639586.1791203635; _gcl_au=1.1.110150301.1791203635.-.-.1791203634.1489219202.1791203635.1791203635; _pxvid=0494809e-c0b9-11f1-8e98-0f39c3e852c6; _fbp=fb.1.1791203637575.36687965192034270; _px3=e3c342d42090da3caae7d2ca885b2dd44fe330d6f0ae989c139f3fb416d74ee6:WO95XF3+6GaGrYv2TCOGxGVGTqVNpFetEabFJIRobDaJzsSGuOvUn4nz6NQlX4/5Kr87cW1Kd4e6GT+3cIXEpQ==:1000:Vn6+64RW/hIpUttge9eWu5CFhJd9NH0Ua+nUubhOrJ32Pw9ACJoVRxH7pzNv3b0seItnclMvg7Gp/Sc8c2EbBZnz/PF+n/wD0cQNZHXDTo+vBuosIkQQ6n+ZRYE+4FxR2MQBBLSbuVp5Nkygs+bpQwM5ucly44D01GXYqTDEH68ZXStlCs+EB01NwbzSdmWUKvohF6mGrYyVOzBLG7eBeM9pKMYIbezHb/ZE2dhBknsUWHpE4q5M4OfOA7tpFxa0IHbYfUM1CorpL7F8dFGAazKCN6LDhyRw7UeM86CjwFl+4GAXYhOUOaKUMce4bBkIi/VP5UYYHd5VJkhQZr/xxG24Nd37ZtQefkbNb4cy39mmGCFnG6lL3j8VWMRhE5KwemjZPi5mcVqc9jqzfWy7UesQ4fF2auGB/bTsDbOKWHnFMamHzUo1U0jfTuymSTVBLqtRFh1JiZ5/uNgoCvqSIg==; __pxvid=094701a9-c0b9-11f1-a991-86c2b4bf7439; g_state={\"i_l\":0,\"i_ll\":1791203640261,\"i_b\":\"aP3M3iP6s8Ksg94KWwo5gyCtqroq2VdoT3aVmz2xb/s\",\"i_e\":{\"enable_itp_optimization\":24},\"i_et\":1791203640261}; forterToken=71ea3ca5437248a1ad73b5edafcd4340_1791203632906__UDF43-m4_32ck_; _ga_GK1NB7HX40=GS2.1.s1791203644$o1$g0$t1791203644$j60$l0$h0; __pdst=7a04e013d20144d6bb440155f3658b9e; _rdt_uuid=1791203646723.998330ed-35e0-4cf6-8da2-6b5c30663ff2; _twpid=tw.1791203646805.717987078861283241; _tt_enable_cookie=1; _ttp=01M460X7Y1GMFMM4AE83ZZP0AV_.tt.1.1791203647426; _uetsid=0ee4c2b0c0b911f1a60f65d86b4eccf5; _uetvid=0ee4e4d0c0b911f1b93c432c811797f6; __obref=4d3737f5-8841-4267-a7d5-cf37391bba99; _tq_id.TV-18900945-1.8951=ed37dd0d9230420b.1791203649.0.1791203649..; __hstc=156287140.c9d6c22fea57fd9c5837e2658fecfce2.1791203651023.1791203651023.1791203651023.1; hubspotutk=c9d6c22fea57fd9c5837e2658fecfce2; __hssrc=1; __hssc=156287140.1.1791203651023; _clck=18v6ik%5E2%5Ega1%5E0%5E2469; _clsk=seth6o%5E1791203656801%5E1%5E0%5El.clarity.ms%2Fcollect; _twsid=1791203646805-255291835.1.1791203656854; pxcts=e3fcHYeygZ6S2Yd89vrwJQ4fYTuki9okjdkX45nBk9o=:qTTtK/5dz2vPpFKQT-mWvkdF2EfHjZQjSY67y6QhC6cUbBDN0n4nzTQ4agdJcNNZMtph78DW5kIXyBsc4nGuUNBf8kIHrj3LQ8wz1D4viQxyq/Lcs2dRCs7RxlzTxm-76t5ZAhDOFd7jDpCNIdinVBQobDRuOvarztbNQXldE8uesFoNW0ONJL6XMgJQEU/e; _pxde=810e806e0947ff835fc3452f278b2351fc6e2cdeb80ad2fad41f7e37896cc681:eyJ0aW1lc3RhbXAiOjE3OTEyMDM2NjAyNTQsImZfa2IiOjAsImlwY19pZCI6WzIsMjJdfQ==; _ga_3DVS3FJR7P=GS2.1.s1791203634$o1$g1$t1791203665$j29$l0$h0; ttcsid_C2IG4QAQV140ORDJ7BR0=1791203647510::FLFTNPcKkjXPBns7qzLa.1.1791203665725.1; ttcsid_C6IPOEIO6DGUDE0A23MG=1791203647518::KU-8yw9C9yD2Cgt1MuW5.1.1791203665725.1; ttcsid_C3VBNIPU9OSLU1GC4A70=1791203647521::Zz8wero-54vNLZFQS0rh.1.1791203665725.1; ttcsid_CAFNM6RC77U9UO5AT1FG=1791203647524::ScluxcCm45-qen9Ok4X8.1.1791203665725.1; ttcsid=1791203647513::GM2HARRXK00JqkbI1czt.1.1791203665725.0::1.-20156.233::18273.6.0.0::9482.6.0",
+            "prefill": "u_guid=1791203631000-b70596254a59ebdeefe9ba6601e9d78aef12667a; go_back_to_fiverr_url=%2F; logged_out_currency=USD; _pxhd=KKn3NpDsVWnAItYiYDX/6kVyTdbG4dG5WHj5G6l1bHOnk2Gex5LaLIHWoDMG8DxcyKm5SYcXMjm3mqgGOfnrKA==:qfLcxORuqwsTg6HSd0dZfUV4XhKIYUV0r9nFs2USMrXMSOg8MVPwyUVGyVhN8uPO8pFCDRgZbYJDAPSuggrTSJ/3ryfLDpxnx05kaZV-m28=; _cfuvid=6KmShH2cgZvjSVFpn35rtPz6m8fw1u.8nT503fzrfY4-1791203630.3267071-1.0.1.1-AMuPgKKJF9ghEC_.V_nNhBH6dCzhqDcgtsLvdeglnJg; page_views=1; cpra_opt_out_status_external=false; _ga=GA1.1.1274639586.1791203635; _gcl_au=1.1.110150301.1791203635.-.-.1791203634.1489219202.1791203635.1791203635; _pxvid=0494809e-c0b9-11f1-8e98-0f39c3e852c6; _fbp=fb.1.1791203637575.36687965192034270; _px3=e3c342d42090da3caae7d2ca885b2dd44fe330d6f0ae989c139f3fb416d74ee6:WO95XF3+6GaGrYv2TCOGxGVGTqVNpFetEabFJIRobDaJzsSGuOvUn4nz6NQlX4/5Kr87cW1Kd4e6GT+3cIXEpQ==:1000:Vn6+64RW/hIpUttge9eWu5CFhJd9NH0Ua+nUubhOrJ32Pw9ACJoVRxH7pzNv3b0seItnclMvg7Gp/Sc8c2EbBZnz/PF+n/wD0cQNZHXDTo+vBuosIkQQ6n+ZRYE+4FxR2MQBBLSbuVp5Nkygs+bpQwM5ucly44D01GXYqTDEH68ZXStlCs+EB01NwbzSdmWUKvohF6mGrYyVOzBLG7eBeM9pKMYIbezHb/ZE2dhBknsUWHpE4q5M4OfOA7tpFxa0IHbYfUM1CorpL7F8dFGAazKCN6LDhyRw7UeM86CjwFl+4GAXYhOUOaKUMce4bBkIi/VP5UYYHd5VJkhQZr/xxG24Nd37ZtQefkbNb4cy39mmGCFnG6lL3j8VWMRhE5KwemjZPi5mcVqc9jqzfWy7UesQ4fF2auGB/bTsDbOKWHnFMamHzUo1U0jfTuymSTVBLqtRFh1JiZ5/uNgoCvqSIg==; __pxvid=094701a9-c0b9-11f1-a991-86c2b4bf7439; g_state={\"i_l\":0,\"i_ll\":1791203640261,\"i_b\":\"aP3M3iP6s8Ksg94KWwo5gyCtqroq2VdoT3aVmz2xb/s\",\"i_e\":{\"enable_itp_optimization\":24},\"i_et\":1791203640261}; forterToken=71ea3ca5437248a1ad73b5edafcd4340_1791203632906__UDF43-m4_32ck_; _ga_GK1NB7HX40=GS2.1.s1791203644$o1$g0$t1791203644$j60$l0$h0; __pdst=7a04e013d20144d6bb440155f3658b9e; _rdt_uuid=1791203646723.998330ed-35e0-4cf6-8da2-6b5c30663ff2; _twpid=tw.1791203646805.717987078861283241; _tt_enable_cookie=1; _ttp=01M460X7Y1GMFMM4AE83ZZP0AV_.tt.1.1791203647426; _uetsid=0ee4c2b0c0b911f1a60f65d86b4eccf5; _uetvid=0ee4e4d0c0b911f1b93c432c811797f6; __obref=4d3737f5-8841-4267-a7d5-cf37391bba99; _tq_id.TV-18900945-1.8951=ed37dd0d9230420b.1791203649.0.1791203649..; __hstc=156287140.c9d6c22fea57fd9c5837e2658fecfce2.1791203651023.1791203651023.1791203651023.1; hubspotutk=c9d6c22fea57fd9c5837e2658fecfce2; __hssrc=1; __hssc=156287140.1.1791203651023; _clck=18v6ik%5E2%5Ega1%5E0%5E2469; _clsk=seth6o%5E1791203656801%5E1%5E0%5El.clarity.ms%2Fcollect; _twsid=1791203646805-255291835.1.1791203656854; pxcts=e3fcHYeygZ6S2Yd89vrwJQ4fYTuki9okjdkX45nBk9o=:qTTtK/5dz2vPpFKQT-mWvkdF2EfHjZQjSY67y6QhC6cUbBDN0n4nzTQ4agdJcNNZMtph78DW5kIXyBsc4nGuUNBf8kIHrj3LQ8wz1D4viQxyq/Lcs2dRCs7RxlzTxm-76t5ZAhDOFd7jDpCNIdinVBQobDRuOvarztbNQXldE8uesFoNW0ONJL6XMgJQEU/e; _pxde=810e806e0947ff835fc3452f278b2351fc6e2cdeb80ad2fad41f7e37896cc681:eyJ0aW1lc3RhbXAiOjE3OTEyMDM2NjAyNTQsImZfa2IiOjAsImlwY19pZCI6WzIsMjJdfQ==; _ga_3DVS3FJR7P=GS2.1.s1791203634$o1$g1$t1791203665$j29$l0$h0; ttcsid_C2IG4QAQV140ORDJ7BR0=1791203647510::FLFTNPcKkjXPBns7qzLa.1.1791203665725.1; ttcsid_C6IPOEIO6DGUDE0A23MG=1791203647518::KU-8yw9C9yD2Cgt1MuW5.1.1791203665725.1; ttcsid_C3VBNIPU9OSLU1GC4A70=1791203647521::Zz8wero-54vNLZFQS0rh.1.1791203665725.1; ttcsid_CAFNM6RC77U9UO5AT1FG=1791203647524::ScluxcCm45-qen9Ok4X8.1.1791203665725.1; ttcsid=1791203647513::GM2HARRXK00JqkbI1czt.1.1791203665725.0::1.-20156.233::18273.6.0.0::9482.6.0"
+        },
+        "proxyConfiguration": {
+            "title": "Proxy configuration",
+            "type": "object",
+            "description": "Select Apify proxies or custom proxies.",
+            "editor": "proxy"
+        }
+    },
+    "required": [
+        "queries"
+    ]
+}

@@ -1,0 +1,22 @@
+node_modules/
+dist/
+storage/
+apify_storage/
+.apify/
+
+# Environment files with secrets
+.env
+.env.*
+*.env
+!.env.example
+
+# Local agent scratch & temp files
+.ai/
+
+# Local test scratch files
+index.html
+search_result.json
+
+# System & IDE files
+.DS_Store
+Thumbs.db
